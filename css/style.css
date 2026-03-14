@@ -102,7 +102,6 @@ body {
 .content {
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: calc(var(--header-h) + 20px);
     padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
     animation: fadeIn 0.3s ease;
 }
@@ -121,10 +120,12 @@ body {
 /* ===== СТРАНИЦЫ ===== */
 .page {
     display: none;
+    scroll-margin-top: calc(var(--header-h) + 10px);
 }
 
 .page.active {
     display: block;
+    padding-top: calc(var(--header-h) + 20px);
 }
 
 /* ===== СЕТКА СЕРВИСОВ ===== */
@@ -133,7 +134,6 @@ body {
     grid-template-columns: 1fr;
     gap: 12px;
     margin-bottom: 20px;
-    margin-top: 20px;
 }
 
 @media (min-width: 600px) {
@@ -203,7 +203,6 @@ body {
     border: 1px solid var(--border);
     border-radius: 16px;
     padding: 24px;
-    margin-top: 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
