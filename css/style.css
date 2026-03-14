@@ -309,11 +309,19 @@ body {
 .btn-primary {
     background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
     color: white;
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    animation: glow 3s ease-in-out infinite;
 }
 
-.btn-primary:hover {
-    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
+.btn-primary:active {
+    transform: scale(0.96);
+    box-shadow: 0 2px 6px rgba(99, 102, 241, 0.2);
+    animation: none;
+}
+
+@keyframes glow {
+    0%, 100% { box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3); }
+    50%       { box-shadow: 0 4px 24px rgba(139, 92, 246, 0.55); }
 }
 
 .btn-secondary {
@@ -322,9 +330,10 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.25);
+.btn-secondary:active {
+    transform: scale(0.96);
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.28);
 }
 
 /* ===== МОДАЛЬ ВЫХОДА ===== */
