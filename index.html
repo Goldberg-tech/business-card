@@ -6,6 +6,18 @@
     <meta name="theme-color" content="#080c14">
     <title>Никита — Разработка & Telegram</title>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Mulish:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        // Инициализация Telegram Web App в начале
+        if (window.Telegram?.WebApp) {
+            const tg = window.Telegram.WebApp;
+            tg.ready();
+            tg.expand();
+            tg.disableVerticalSwipes();
+            if (tg.setHeaderColor) tg.setHeaderColor('#080c14');
+            if (tg.setBackgroundColor) tg.setBackgroundColor('#080c14');
+        }
+    </script>
     <style>
         * {
             margin: 0;
@@ -244,14 +256,6 @@
     </div>
 
     <script>
-        // Telegram Web App интеграция
-        if (window.Telegram?.WebApp) {
-            const tg = window.Telegram.WebApp;
-            tg.ready();
-            tg.expand();
-            tg.disableVerticalSwipes();
-        }
-
         function openTelegram() {
             const username = 'Goldberg_tech';
             const url = `https://t.me/${username}`;
@@ -262,17 +266,6 @@
             } else {
                 // Иначе открываем обычную ссылку
                 window.open(url, '_blank');
-            }
-        }
-
-        // Динамическая установка цветов в метатеге theme-color
-        if (window.Telegram?.WebApp) {
-            const tg = window.Telegram.WebApp;
-            if (tg.setHeaderColor) {
-                tg.setHeaderColor('#080c14');
-            }
-            if (tg.setBackgroundColor) {
-                tg.setBackgroundColor('#080c14');
             }
         }
     </script>
