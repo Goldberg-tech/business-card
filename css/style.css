@@ -79,10 +79,10 @@ body {
 
 /* ===== ОСНОВНОЙ КОНТЕНТ ===== */
 .app-main {
-    margin-top: 170px;
+    margin-top: 200px;
     padding: 20px;
-    padding-bottom: max(20px, env(safe-area-inset-bottom));
-    min-height: calc(100vh - 170px);
+    padding-bottom: max(100px, env(safe-area-inset-bottom));
+    min-height: auto;
 }
 
 /* ===== СТРАНИЦЫ ===== */
