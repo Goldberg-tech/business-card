@@ -18,11 +18,6 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function initApp() {
-    // Показываем главную страницу с анимацией
-    setTimeout(() => {
-        navigate('home');
-    }, 50);
-
     // Кнопки сервисов (главная)
     document.querySelectorAll(".service-card").forEach(card => {
         card.addEventListener("click", () => {
