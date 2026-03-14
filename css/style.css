@@ -25,6 +25,7 @@ body {
     color: var(--text);
     font-family: 'Mulish', sans-serif;
     overflow-x: hidden;
+    overscroll-behavior: contain;
 }
 
 /* ===== ШАПКА ===== */
@@ -79,10 +80,9 @@ body {
 
 /* ===== ОСНОВНОЙ КОНТЕНТ ===== */
 .app-main {
-    margin-top: 200px;
+    margin-top: 240px;
     padding: 20px;
     padding-bottom: max(100px, env(safe-area-inset-bottom));
-    min-height: auto;
 }
 
 /* ===== СТРАНИЦЫ ===== */
