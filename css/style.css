@@ -101,13 +101,10 @@ body {
 /* ===== КОНТЕНТ ===== */
 .content {
     padding: 20px;
+    padding-top: calc(20px + env(safe-area-inset-top, 0px));
     padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
     animation: fadeIn 0.3s ease;
-    margin-top: calc(
-        80px +
-        env(safe-area-inset-top, 0px) +
-        24px
-    );
+    margin-top: 125px;
 }
 
 @keyframes fadeIn {
@@ -170,6 +167,11 @@ body {
     font-size: 32px;
     margin-bottom: 12px;
     display: block;
+    text-align: center;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .service-title {
@@ -205,6 +207,10 @@ body {
     display: block;
     margin-bottom: 16px;
     text-align: center;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .detail-card h3 {
