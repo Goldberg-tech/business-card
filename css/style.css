@@ -9,7 +9,7 @@
     --text-dim:     rgba(232, 232, 232, 0.7);
     --text-muted:   rgba(232, 232, 232, 0.4);
     --border:       rgba(255, 255, 255, 0.08);
-    --header-h:     140px;
+    --header-h:     160px;
 }
 
 /* ===== RESET ===== */
@@ -100,11 +100,11 @@ body {
 
 /* ===== КОНТЕНТ ===== */
 .content {
-    padding: 20px;
-    padding-top: calc(20px + env(safe-area-inset-top, 0px));
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: calc(var(--header-h) + 20px);
     padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
     animation: fadeIn 0.3s ease;
-    margin-top: 125px;
 }
 
 @keyframes fadeIn {
@@ -150,6 +150,10 @@ body {
     cursor: pointer;
     transition: all 0.2s ease;
     will-change: transform, background;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .service-card:hover {
