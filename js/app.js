@@ -6,6 +6,8 @@ window.addEventListener("DOMContentLoaded", () => {
         try { tg.expand(); } catch(e) {}
         try { if (typeof tg.requestFullscreen === "function") tg.requestFullscreen(); } catch(e) {}
         try { if (typeof tg.disableVerticalSwipes === "function") tg.disableVerticalSwipes(); } catch(e) {}
+        try { tg.setHeaderColor("#080c14"); } catch(e) {}
+        try { tg.setBackgroundColor("#080c14"); } catch(e) {}
         if (tg.BackButton) tg.BackButton.hide();
         tg.onEvent("close", () => {
             document.getElementById("exitModal")?.classList.add("open");
