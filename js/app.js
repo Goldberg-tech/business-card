@@ -1,5 +1,9 @@
 const tg = window.Telegram?.WebApp;
 
+// Сразу сбрасываем на главную до любого рендера (защита от кэша Telegram WebView)
+document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+document.getElementById("page-home")?.classList.add("active");
+
 window.addEventListener("DOMContentLoaded", () => {
     if (tg) {
         tg.ready();
