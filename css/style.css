@@ -166,8 +166,6 @@ body {
 .service-icon {
     font-size: 32px;
     margin-bottom: 12px;
-    display: block;
-    text-align: center;
     height: 40px;
     display: flex;
     align-items: center;
@@ -204,9 +202,7 @@ body {
 
 .detail-icon {
     font-size: 48px;
-    display: block;
     margin-bottom: 16px;
-    text-align: center;
     height: 60px;
     display: flex;
     align-items: center;
