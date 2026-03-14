@@ -18,7 +18,6 @@
 html {
     overscroll-behavior: none;
     background: var(--bg);
-    scroll-behavior: smooth;
 }
 
 body {

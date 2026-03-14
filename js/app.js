@@ -14,10 +14,23 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Считаем реальную высоту header и выставляем padding
+    const header = document.querySelector('.site-header');
+    const main = document.querySelector('.app-main');
+    if (header && main) {
+        const headerH = header.offsetHeight;
+        main.style.paddingTop = (headerH + 24) + 'px';
+    }
+
     initApp();
 });
 
 function initApp() {
+    // Показываем главную страницу с анимацией
+    setTimeout(() => {
+        navigate('home');
+    }, 50);
+
     // Кнопки сервисов (главная)
     document.querySelectorAll(".service-card").forEach(card => {
         card.addEventListener("click", () => {
