@@ -36,12 +36,11 @@ body {
     touch-action: pan-y;
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;
-    padding-top: env(safe-area-inset-top, 0px);
 }
 
 /* ===== ШАПКА ===== */
 .site-header {
-    padding: calc(env(safe-area-inset-top, 0px) + 16px) 20px 12px;
+    padding: calc(env(safe-area-inset-top, 0px) + 12px) 20px 12px;
     background: rgba(255, 255, 255, 0.03);
     border-bottom: 1px solid var(--border);
     position: fixed;
@@ -50,9 +49,7 @@ body {
     right: 0;
     z-index: 100;
     backdrop-filter: blur(8px);
-    height: var(--header-h);
-    display: flex;
-    align-items: center;
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .header-content {
@@ -104,8 +101,13 @@ body {
 /* ===== КОНТЕНТ ===== */
 .content {
     padding: 20px;
+    padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
     animation: fadeIn 0.3s ease;
-    margin-top: var(--header-h);
+    margin-top: calc(
+        80px +
+        env(safe-area-inset-top, 0px) +
+        24px
+    );
 }
 
 @keyframes fadeIn {

@@ -122,8 +122,8 @@ function navigate(page) {
     // Haptic feedback
     haptic("selection");
 
-    // Прокрутить в начало
-    window.scrollTo(0, 0);
+    // Плавная прокрутка в начало
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 // ===== HAPTIC FEEDBACK =====
