@@ -1,8 +1,10 @@
 const tg = window.Telegram?.WebApp;
 
-// Сразу сбрасываем на главную до любого рендера (защита от кэша Telegram WebView)
+// Сразу сбрасываем на главную и скролл до любого рендера (защита от кэша Telegram WebView)
 document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
 document.getElementById("page-home")?.classList.add("active");
+const _main = document.querySelector(".app-main");
+if (_main) _main.scrollTop = 0;
 
 window.addEventListener("DOMContentLoaded", () => {
     if (tg) {
