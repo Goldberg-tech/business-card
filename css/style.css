@@ -15,17 +15,19 @@
     box-sizing: border-box;
 }
 
-html, body {
-    width: 100%;
-    height: 100%;
+html {
+    overscroll-behavior: none;
 }
 
 body {
     background: linear-gradient(135deg, var(--bg) 0%, var(--bg2) 100%);
     color: var(--text);
     font-family: 'Mulish', sans-serif;
+    min-height: 100svh;
     overflow-x: hidden;
-    overscroll-behavior: contain;
+    overscroll-behavior-y: none;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* ===== ШАПКА ===== */
@@ -80,15 +82,17 @@ body {
 
 /* ===== ОСНОВНОЙ КОНТЕНТ ===== */
 .app-main {
-    margin-top: 240px;
-    padding: 20px;
-    padding-bottom: max(100px, env(safe-area-inset-bottom));
+    padding-top: 280px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: max(120px, env(safe-area-inset-bottom));
+    min-height: 100svh;
 }
 
 /* ===== СТРАНИЦЫ ===== */
 .page {
     display: none;
-    animation: fadeIn 0.3s ease;
+    animation: fadeIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .page.active {
@@ -96,15 +100,21 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .page-title {
     font-family: 'Unbounded', sans-serif;
     font-size: 26px;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     color: var(--text);
 }
 
@@ -113,7 +123,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     gap: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 @media (min-width: 600px) {
@@ -129,7 +139,8 @@ body {
     border-radius: 16px;
     padding: 16px;
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform, background, border-color;
 }
 
 .service-card:hover {
@@ -139,13 +150,15 @@ body {
 }
 
 .service-card:active {
-    transform: translateY(-1px);
-    opacity: 0.9;
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
 
 .service-icon {
     font-size: 32px;
     margin-bottom: 12px;
+    display: block;
 }
 
 .service-title {
@@ -196,7 +209,7 @@ body {
     color: var(--text-dim);
     line-height: 1.6;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 /* ===== СПИСОК ОСОБЕННОСТЕЙ ===== */
@@ -204,13 +217,13 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .feature {
     font-size: 13px;
     color: var(--text-dim);
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 /* ===== СПИСОК ЦЕН ===== */
@@ -218,15 +231,21 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .price-item {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 12px;
+    padding: 14px;
     text-align: center;
+    transition: all 0.3s ease;
+}
+
+.price-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
 }
 
 .price-label {
@@ -258,12 +277,13 @@ body {
     font-weight: 600;
     font-family: 'Mulish', sans-serif;
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+    will-change: transform, background, opacity;
 }
 
 .btn:hover {
@@ -272,7 +292,7 @@ body {
 
 .btn:active {
     transform: translateY(0);
-    opacity: 0.9;
+    opacity: 0.92;
 }
 
 .btn-primary {
@@ -306,7 +326,7 @@ body {
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(6px);
     transform: translateY(100%);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     padding: 16px 20px;
     padding-bottom: max(16px, env(safe-area-inset-bottom));
     display: flex;
