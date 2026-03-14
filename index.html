@@ -7,21 +7,22 @@
     <title>Никита — Разработка & Telegram</title>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Mulish:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <!-- Telegram WebApp SDK — ОБЯЗАТЕЛЬНО ПЕРВЫМ -->
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-    <!-- Главная страница -->
-    <div class="page active" id="page-home">
-        <div class="site-header">
-            <div class="header-content">
-                <div class="avatar">Н</div>
-                <h1 class="name">Никита</h1>
-                <p class="role">Разработчик</p>
-            </div>
+    <!-- ШАПКА - фиксирована ВВЕРХУ -->
+    <header class="site-header">
+        <div class="header-content">
+            <div class="avatar">Н</div>
+            <h1 class="name">Никита</h1>
+            <p class="role">Разработчик</p>
         </div>
+    </header>
 
-        <div class="content">
+    <!-- КОНТЕНТ -->
+    <main class="app-main">
+        <!-- Главная -->
+        <div class="page active" id="page-home">
             <div class="services-grid">
                 <div class="service-card" data-page="parser">
                     <div class="service-icon">🔍</div>
@@ -46,22 +47,14 @@
             </div>
 
             <div class="button-group">
-                <button class="btn btn-primary" id="btnTelegram">
-                    💬 Написать в Telegram
-                </button>
-                <a href="https://github.com/Goldberg-tech" class="btn btn-secondary" target="_blank" rel="noopener">
-                    🐙 GitHub
-                </a>
+                <button class="btn btn-primary" id="btnTelegram">💬 Написать в Telegram</button>
+                <a href="https://github.com/Goldberg-tech" class="btn btn-secondary" target="_blank" rel="noopener">🐙 GitHub</a>
             </div>
         </div>
-    </div>
 
-    <!-- Страница парсера -->
-    <div class="page" id="page-parser">
-        <div class="site-header">
+        <!-- Парсер -->
+        <div class="page" id="page-parser">
             <h2 class="page-title">Парсер Telegram</h2>
-        </div>
-        <div class="content">
             <div class="detail-card">
                 <div class="detail-icon">🔍</div>
                 <h3>Сбор контактов & Рассылка</h3>
@@ -85,17 +78,13 @@
                     </div>
                 </div>
 
-                <button class="btn btn-primary" id="btnServiceParser">Заказать</button>
+                <button class="btn btn-primary">Заказать</button>
             </div>
         </div>
-    </div>
 
-    <!-- Страница VPN -->
-    <div class="page" id="page-vpn">
-        <div class="site-header">
+        <!-- VPN -->
+        <div class="page" id="page-vpn">
             <h2 class="page-title">VPN Швеция</h2>
-        </div>
-        <div class="content">
             <div class="detail-card">
                 <div class="detail-icon">🔐</div>
                 <h3>Защищённое соединение</h3>
@@ -119,17 +108,13 @@
                     </div>
                 </div>
 
-                <button class="btn btn-primary" id="btnServiceVPN">Купить</button>
+                <button class="btn btn-primary">Купить</button>
             </div>
         </div>
-    </div>
 
-    <!-- Страница TMA разработки -->
-    <div class="page" id="page-tma">
-        <div class="site-header">
+        <!-- TMA -->
+        <div class="page" id="page-tma">
             <h2 class="page-title">Разработка TMA</h2>
-        </div>
-        <div class="content">
             <div class="detail-card">
                 <div class="detail-icon">⚡</div>
                 <h3>Telegram Mini Apps</h3>
@@ -142,16 +127,12 @@
                     <div class="feature">✓ GitHub Pages + собственный сервер</div>
                 </div>
 
-                <p class="detail-desc" style="margin-top: 20px; font-size: 13px;">
-                    Магазины подписок, интерактивные боты, парсеры, рассыльщики — всё делаю надёжно и быстро.
-                </p>
-
-                <button class="btn btn-primary" id="btnServiceTMA">Заказать разработку</button>
+                <button class="btn btn-primary">Заказать разработку</button>
             </div>
         </div>
-    </div>
+    </main>
 
-    <!-- Модальное окно выхода -->
+    <!-- МОДАЛЬ ВЫХОДА -->
     <div class="exit-modal" id="exitModal">
         <div class="exit-modal-content">
             <p>Выйти из приложения?</p>
